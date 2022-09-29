@@ -1,2 +1,28 @@
 server:
   port: 8761
+  
+eureka:
+  instance:
+    # Nombre de la instancia de Eureka
+    hostname: localhost
+  
+    # ID unico de la instancia de Eureka
+    instanceId: ${eureka.instance.hostname}:${spring.application.name}
+
+    # A bench of health information end-points provided by eureka
+    #homePageUrl: https://${eureka.hostname}/
+    #statusPageUrl: http://${eureka.hostname}
+    #healthCheckUrl: http://${eureka.hostname}/actuator/health
+    #secureHealthCheckUrl: http://${eureka.hostname}/actuator/health
+    
+    
+  client:
+    # No se registra en el servidor eureka.
+    register-with-eureka: false
+    # Determina si el servicio se registra como cliente en el servidor eureka
+    fetch-registry: false
+    service-url: 
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka
+  #server:
+    #wait-time-in-ms-when-sync-empty: 0
+
