@@ -1,0 +1,22 @@
+server:
+  port: 8081
+user:
+  role: developer
+  alias: ogallardo
+spring:
+  jpa:
+    show-sql: true
+datasource:
+  url: jdbc:h2:mem:product
+  username: root
+  password: root123$
+  driver-class-name: org.h2.Driver
+  
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-url: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
