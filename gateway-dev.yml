@@ -7,10 +7,9 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: cliente
+          id: cliente
           uri: lb://cliente
-          predicates:
-          - Path=/cliente/**
+          predicates: Path=/cliente/**
   
 eureka:
   client:
