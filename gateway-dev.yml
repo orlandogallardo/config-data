@@ -8,7 +8,7 @@ spring:
           enabled: true
       routes:
           id: cliente
-          uri: lb://cliente
+          uri: lb://CLIENTE
           predicates: Path=/cliente/**
   
 eureka:
