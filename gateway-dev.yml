@@ -2,14 +2,19 @@ server:
   port: 8081
   
 spring:
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8085
     gateway:
       discovery:
         locator:
           enabled: true
       routes:
-          id: cliente
+        - id: cliente
           uri: lb://cliente
-          predicates: Path=/cliente/**
+          predicates:
+          - Path=/cliente/**  
   
 eureka:
   client:
