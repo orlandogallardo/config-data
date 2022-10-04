@@ -15,6 +15,10 @@ spring:
           uri: lb://cliente
           predicates:
           - Path=/cliente/**  
+        - id: productos
+          uri: lb://producto
+          predicates:
+          - Path=/producto/**
   
 eureka:
   client:
