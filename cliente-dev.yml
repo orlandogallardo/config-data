@@ -22,7 +22,7 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     
-  resilience4j.circuitbreaker:
+resilience4j.circuitbreaker:
     instances:
         productoCB:
             registerHealthIndicator: true
